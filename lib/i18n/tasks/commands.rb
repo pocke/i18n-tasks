@@ -23,7 +23,5 @@ module I18n::Tasks
     include Command::Commands::Data
     include Command::Commands::Tree
     include Command::Commands::Meta
-
-    require 'highline/import'
   end
 end

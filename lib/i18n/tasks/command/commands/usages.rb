@@ -74,6 +74,15 @@ module I18n::Tasks
           ].join(' ')
           exit 1 unless agree msg
         end
+
+        def agree(msg)
+          puts msg
+          while (resp = $stdin.gets) && resp !~ /\A(?:y(?:es)?|no?)\Z/
+            puts 'Please enter "yes" or "no".'
+            puts msg
+          end
+          resp && resp.downcase[0] == 'y'
+        end
       end
     end
   end
